@@ -1,0 +1,7 @@
+version: '3.4'
+
+services:
+  xbrowsersync:
+    build: .
+  xbrowsersync-admin:
+    build: admin/.

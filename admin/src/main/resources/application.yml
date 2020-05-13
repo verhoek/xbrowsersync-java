@@ -1,0 +1,20 @@
+server:
+  port: 9001
+  use-forward-headers: true
+
+logging:
+  level:
+    org.springframework: DEBUG
+
+spring:
+  profiles:
+    active: secure
+---
+spring:
+  application:
+    name: spring-boot-admin-reactive
+  profiles: secure
+  security:
+    user:
+      name: admin
+      password: test

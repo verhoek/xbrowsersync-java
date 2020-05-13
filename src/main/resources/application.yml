@@ -1,0 +1,59 @@
+server:
+  http2:
+    enabled: true
+  port: 9000
+
+xbs:
+  creation:
+    enabled: true
+
+spring:
+  security:
+    user:
+      name: client
+      password: client
+  jpa:
+    generate-ddl: true
+    properties:
+      hibernate:
+        ddl-auto: create
+        dialect: com.github.verhoek.xbrowsersync.configs.SQLiteDialect
+  datasource:
+    username: foo
+    password: bar
+    url: jdbc:sqlite:file:data/sqlite.db
+  boot:
+    admin:
+      client:
+        url: http://localhost:9001
+        username: admin
+        password: test
+        instance:
+          name: xbrowsersync-java
+          service-base-url: http://localhost:8999
+          metadata:
+            user.name: client
+            user.password: client
+
+management:
+  server:
+    port: 8999
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    env:
+      post:
+        enabled: true
+    health:
+      show-details: ALWAYS
+
+
+logging:
+  level:
+    org.springframework: INFO
+
+application:
+  version: 1.1.12
+  maxSyncSize: 358400

@@ -1,0 +1,5 @@
+.idea
+admin/build/**
+data/**
+build/**
+.gradle

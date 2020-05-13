@@ -1,0 +1,36 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+//    dependencies {
+//        classpath group: 'org.hsqldb', name: 'hsqldb', version: '2.5.0'
+//    }
+}
+
+plugins {
+    id 'org.springframework.boot' version '2.2.6.RELEASE'
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'de.codecentric', name: 'spring-boot-admin-starter-server', version: '2.2.3'
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: '2.2.6.RELEASE'
+    compile group: 'org.springframework.cloud', name: 'spring-cloud-context', version: '2.2.2.RELEASE'
+
+}
+
+
+//jar {
+//    manifest {
+//        attributes(
+//                'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
+//                'Main-Class': 'com.github.verhoek.xbrowsersync.SpringBootAdminReactiveApplication'
+//        )
+//    }
+//}
+//
+//
