@@ -1,15 +1,16 @@
-buildscript {
-    repositories {
-        mavenCentral()
-    }
-}
-
 plugins {
     id 'org.springframework.boot' version '2.2.6.RELEASE'
     id 'java'
 }
 
-sourceCompatibility = 1.14
+java {
+    sourceCompatibility = JavaVersion.VERSION_14
+}
+
+build.doFirst{
+    mkdir "data"
+}
+
 
 repositories {
     mavenCentral()
